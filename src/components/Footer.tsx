@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Shield, Github, Twitter, Mail } from 'lucide-react';
+import { Shield, Github, Twitter, Mail, Instagram } from 'lucide-react';
 import { Newsletter } from './Newsletter';
 import { useSettings } from '../context/SettingsContext';
 
@@ -45,8 +45,8 @@ export function Footer() {
                 Empowering individuals to reclaim their digital privacy, security, and freedom in an age of surveillance.
               </p>
               <div className="flex items-center gap-3">
-                <a href="#" className="w-9 h-9 rounded-lg bg-dark-800 flex items-center justify-center text-dark-400 hover:text-brand-400 hover:bg-dark-700 transition-all" aria-label="GitHub">
-                  <Github className="w-4 h-4" />
+                <a href="https://www.instagram.com/privatelivesmatter.com_?igsh=YWI1ODNoOTN5eGtm&utm_source=qr" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-dark-800 flex items-center justify-center text-dark-400 hover:text-brand-400 hover:bg-dark-700 transition-all" aria-label="Instagram">
+                  <Instagram className="w-4 h-4" />
                 </a>
                 <a href="#" className="w-9 h-9 rounded-lg bg-dark-800 flex items-center justify-center text-dark-400 hover:text-brand-400 hover:bg-dark-700 transition-all" aria-label="Twitter">
                   <Twitter className="w-4 h-4" />
@@ -96,6 +96,11 @@ export function Footer() {
             <div>
               <h4 className="text-xs font-semibold text-dark-300 uppercase tracking-wider mb-4">Legal</h4>
               <ul className="space-y-2.5">
+                <li>
+                  <Link to="/editorial-integrity" className="text-sm font-medium text-brand-400 hover:text-white transition-colors">
+                    Editorial Integrity
+                  </Link>
+                </li>
                 <li>
                   <Link to="/privacy" className="text-sm text-dark-400 hover:text-brand-400 transition-colors">
                     Privacy Policy
