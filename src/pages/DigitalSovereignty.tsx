@@ -5,34 +5,7 @@ import { cn } from '../utils/cn';
 export function DigitalSovereignty() {
   const [isProtected, setIsProtected] = useState(false);
   const [activeTab, setActiveTab] = useState<'browsing' | 'social' | 'mobile'>('browsing');
-  const [toolFilter, setToolFilter] = useState<'basic' | 'advanced'>('basic');
   const [expandedThreat, setExpandedThreat] = useState<string | null>(null);
-
-  // --- DATA ---
-  const toolData = {
-    browsers: [
-      { name: "Firefox", level: "basic", desc: "Open source, highly customizable privacy settings." },
-      { name: "Brave", level: "basic", desc: "Blocks trackers by default out of the box." },
-      { name: "LibreWolf", level: "advanced", desc: "A fork of Firefox with all telemetry removed and hardening pre-applied." },
-      { name: "Tor Browser", level: "advanced", desc: "Routes traffic through 3 relays. Essential for anonymity." },
-      { name: "DuckDuckGo", level: "basic", desc: "Search engine that doesn't track search history." },
-      { name: "SearXNG", level: "advanced", desc: "Self-hostable metasearch engine." }
-    ],
-    privacy: [
-      { name: "uBlock Origin", level: "basic", desc: "Essential wide-spectrum content blocker. Not just for ads." },
-      { name: "Privacy Badger", level: "basic", desc: "Learns to block invisible trackers automatically." },
-      { name: "Mullvad VPN", level: "advanced", desc: "No email required to sign up. Proven audit record." },
-      { name: "Proton VPN", level: "basic", desc: "Swiss-based, solid free tier and strong paid features." },
-      { name: "Pi-hole", level: "advanced", desc: "Network-wide ad blocking via Raspberry Pi." }
-    ],
-    comms: [
-      { name: "Signal", level: "basic", desc: "Gold standard for E2E encrypted messaging." },
-      { name: "Proton Mail", level: "basic", desc: "Encrypted email provider." },
-      { name: "SimpleLogin", level: "advanced", desc: "Creates email aliases to hide your real address." },
-      { name: "Session", level: "advanced", desc: "Decentralized messenger requiring no phone number." },
-      { name: "GrapheneOS", level: "advanced", desc: "De-Googled Android operating system." }
-    ]
-  };
 
   return (
     <div className="min-h-screen pt-24 pb-16 bg-dark-950">
@@ -308,86 +281,6 @@ export function DigitalSovereignty() {
                     <li className="flex gap-2"><span className="text-green-500">✓</span> <strong>App Audit:</strong> Regularly revoke permissions.</li>
                   </>
                 )}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* TOOLKIT */}
-        <section id="toolkit" className="mb-16">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-2">Defense Toolkit</h2>
-              <p className="text-dark-300">Select your threat model level to see recommended software.</p>
-            </div>
-            <div className="bg-dark-800 p-1 rounded-lg inline-flex">
-              <button 
-                onClick={() => setToolFilter('basic')}
-                className={cn("px-4 py-2 text-sm rounded-md transition-all", toolFilter === 'basic' ? "bg-brand-500 text-white" : "text-dark-300 hover:text-white")}
-              >
-                Basic
-              </button>
-              <button 
-                onClick={() => setToolFilter('advanced')}
-                className={cn("px-4 py-2 text-sm rounded-md transition-all", toolFilter === 'advanced' ? "bg-brand-500 text-white" : "text-dark-300 hover:text-white")}
-              >
-                Advanced
-              </button>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Column 1 */}
-            <div className="bg-dark-800/40 border border-white/5 rounded-2xl p-6">
-              <h3 className="text-lg font-bold text-brand-400 mb-4 pb-2 border-b border-white/5">Browsers & Search</h3>
-              <ul className="space-y-4">
-                {toolData.browsers.filter(t => t.level === toolFilter).map((tool) => (
-                  <li key={tool.name} className="p-3 bg-dark-800 rounded-xl border border-white/5">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="font-bold text-white">{tool.name}</span>
-                      <span className={cn("text-[10px] uppercase px-1.5 py-0.5 rounded", tool.level === 'basic' ? "bg-green-500/20 text-green-400" : "bg-purple-500/20 text-purple-400")}>
-                        {tool.level}
-                      </span>
-                    </div>
-                    <p className="text-xs text-dark-300">{tool.desc}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 2 */}
-            <div className="bg-dark-800/40 border border-white/5 rounded-2xl p-6">
-              <h3 className="text-lg font-bold text-brand-400 mb-4 pb-2 border-b border-white/5">Blockers & VPNs</h3>
-              <ul className="space-y-4">
-                {toolData.privacy.filter(t => t.level === toolFilter).map((tool) => (
-                  <li key={tool.name} className="p-3 bg-dark-800 rounded-xl border border-white/5">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="font-bold text-white">{tool.name}</span>
-                      <span className={cn("text-[10px] uppercase px-1.5 py-0.5 rounded", tool.level === 'basic' ? "bg-green-500/20 text-green-400" : "bg-purple-500/20 text-purple-400")}>
-                        {tool.level}
-                      </span>
-                    </div>
-                    <p className="text-xs text-dark-300">{tool.desc}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 3 */}
-            <div className="bg-dark-800/40 border border-white/5 rounded-2xl p-6">
-              <h3 className="text-lg font-bold text-brand-400 mb-4 pb-2 border-b border-white/5">Communication</h3>
-              <ul className="space-y-4">
-                {toolData.comms.filter(t => t.level === toolFilter).map((tool) => (
-                  <li key={tool.name} className="p-3 bg-dark-800 rounded-xl border border-white/5">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="font-bold text-white">{tool.name}</span>
-                      <span className={cn("text-[10px] uppercase px-1.5 py-0.5 rounded", tool.level === 'basic' ? "bg-green-500/20 text-green-400" : "bg-purple-500/20 text-purple-400")}>
-                        {tool.level}
-                      </span>
-                    </div>
-                    <p className="text-xs text-dark-300">{tool.desc}</p>
-                  </li>
-                ))}
               </ul>
             </div>
           </div>
