@@ -286,6 +286,176 @@ export function DigitalSovereignty() {
           </div>
         </section>
 
+        {/* DATA BROKER ECOSYSTEM */}
+        <section className="mb-24 bg-dark-800/20 border border-white/5 rounded-3xl p-8 md:p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                <Target className="w-8 h-8 text-brand-400" />
+                The Invisible Auction
+              </h2>
+              <p className="text-dark-300 mb-6 leading-relaxed">
+                Behind every webpage is a frantic, millisecond-long auction. Thousands of data points about your current location, battery level, browsing history, and purchase intent are broadcast to hundreds of bidders.
+              </p>
+              <div className="space-y-4">
+                {[
+                  { title: 'Aggregation', desc: 'Brokers combine offline data (credit cards, property records) with online behavior.' },
+                  { title: 'Inference', desc: 'Algorithms predict your political leanings, health issues, and pregnancy status.' },
+                  { title: 'Monetization', desc: 'This "behavioral surplus" is sold to advertisers, insurers, and political campaigns.' }
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-4">
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-brand-500/20 flex items-center justify-center text-[10px] font-bold text-brand-400">
+                      ?
+                    </div>
+                    <div>
+                      <h4 className="text-white font-semibold text-sm">{item.title}</h4>
+                      <p className="text-dark-400 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-brand-500/10 blur-3xl rounded-full" />
+              <div className="relative bg-dark-900 border border-white/10 rounded-2xl p-6 overflow-hidden">
+                <div className="flex items-center gap-2 mb-6 border-b border-white/5 pb-4">
+                  <Activity className="w-4 h-4 text-brand-400 animate-pulse" />
+                  <span className="text-xs font-mono text-dark-400">SURVEILLANCE_FEED_LIVE</span>
+                </div>
+                <div className="space-y-3 font-mono text-[10px] sm:text-xs">
+                  <div className="text-green-500/70">{`[SYSTEM] Intercepting RTB broadcast...`}</div>
+                  <div className="text-dark-400">{`> User_ID: 8fb2-11ef-963b`}</div>
+                  <div className="text-dark-400">{`> Lat: 59.3293 | Long: 18.0686`}</div>
+                  <div className="text-dark-400">{`> Device: iPhone 15 Pro | Battery: 84%`}</div>
+                  <div className="text-brand-400">{`> Interest: "Self-hosting", "Encryption"`}</div>
+                  <div className="text-brand-400">{`> Predicted_Income: $85k - $110k`}</div>
+                  <div className="text-red-400">{`[BID] AdNetwork_Alpha: $0.00042 (WIN)`}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* THREAT MODELING */}
+        <section className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">Threat Modeling</h2>
+            <p className="text-dark-300 max-w-2xl mx-auto">Not everyone needs to live like a spy. Identify your adversary to choose the right protocols.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                level: 'Basic',
+                adversary: 'Ad Networks & Brokers',
+                goal: 'Stop targeted advertising and profile building.',
+                tools: 'Brave/Firefox, uBlock Origin, DDG Search.',
+                border: 'border-white/5'
+              },
+              {
+                level: 'Intermediate',
+                adversary: 'Big Tech & ISPs',
+                goal: 'Decouple identity from daily digital activity.',
+                tools: 'VPN, ProtonMail/Pass, Alias services, Encrypted DNS.',
+                border: 'border-brand-500/30 bg-brand-500/5'
+              },
+              {
+                level: 'Advanced',
+                adversary: 'State Actors & Persistent Threats',
+                goal: 'True anonymity and data compartmentalization.',
+                tools: 'Tor Browser, GrapheneOS, Monero, Self-hosting.',
+                border: 'border-white/5'
+              }
+            ].map((model) => (
+              <div key={model.level} className={cn("p-8 rounded-2xl border transition-all duration-300", model.border)}>
+                <h3 className="text-xl font-bold text-white mb-2">{model.level}</h3>
+                <div className="text-xs font-bold text-brand-400 uppercase tracking-widest mb-4">Adversary: {model.adversary}</div>
+                <div className="space-y-4">
+                  <p className="text-sm text-dark-300 leading-relaxed">
+                    <strong className="text-white block mb-1 text-xs uppercase">Primary Goal:</strong>
+                    {model.goal}
+                  </p>
+                  <p className="text-sm text-dark-300 leading-relaxed">
+                    <strong className="text-white block mb-1 text-xs uppercase">Baseline Toolkit:</strong>
+                    {model.tools}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* GLOBAL RIGHTS */}
+        <section className="mb-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-brand-500 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+              <div className="relative bg-dark-900 rounded-2xl p-8 border border-white/10">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center">
+                    <Lock className="w-6 h-6 text-brand-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Legal Defense</h3>
+                    <p className="text-xs text-dark-400">Know your digital rights</p>
+                  </div>
+                </div>
+                <ul className="space-y-4">
+                  {[
+                    { code: 'GDPR', title: 'Right to Erasure', desc: 'Demand companies delete your data permanently.' },
+                    { code: 'CCPA', title: 'Opt-Out Rights', desc: 'Prevent the sale of your personal info to 3rd parties.' },
+                    { code: 'GPC', title: 'Global Privacy Control', desc: 'Standardized header to signal your objection to tracking.' }
+                  ].map((right) => (
+                    <li key={right.code} className="flex gap-4">
+                      <span className="font-mono text-brand-400 text-xs mt-1">{right.code}</span>
+                      <div>
+                        <h4 className="text-white font-medium text-sm">{right.title}</h4>
+                        <p className="text-dark-400 text-xs">{right.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="order-1 md:order-2">
+            <h2 className="text-3xl font-bold text-white mb-6">The Rights Framework</h2>
+            <p className="text-dark-300 leading-relaxed mb-6">
+              Privacy is not just a technical challenge—it's a fundamental human right recognized by international law. Frameworks like the GDPR in Europe have shifted the power back to the individual, but you must know how to exercise these rights.
+            </p>
+            <p className="text-dark-300 leading-relaxed mb-6">
+              Exercising your "Right to be Forgotten" and using "Global Privacy Control" (GPC) signals in your browser are the first steps toward institutional digital sovereignty.
+            </p>
+          </div>
+        </section>
+
+        {/* VANISH PLAN */}
+        <section className="mb-16 bg-gradient-to-br from-brand-600 to-brand-800 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute bottom-0 right-0 w-64 h-64 bg-black rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+          </div>
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Vanish in 30 Days</h2>
+            <p className="text-white/80 mb-8 text-lg">
+              Digital sovereignty is a journey. Start with these three phases to reclaim your autonomy and reduce your footprint by 90%.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+              {[
+                { phase: '01', title: 'The Audit', desc: 'Identify every account, revoke app permissions, and install uBlock.' },
+                { phase: '02', title: 'Hardening', desc: 'Switch to a private email, VPN, and a secure password manager.' },
+                { phase: '03', title: 'Persistence', desc: 'Regularly audit location settings and move to encrypted messengers.' }
+              ].map((p) => (
+                <div key={p.phase} className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+                  <div className="text-4xl font-black text-white/20 mb-2">{p.phase}</div>
+                  <h4 className="text-white font-bold mb-1">{p.title}</h4>
+                  <p className="text-white/70 text-xs leading-relaxed">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
       </div>
     </div>
   );
