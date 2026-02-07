@@ -1,5 +1,5 @@
 name = "privatelivesmatter"
 compatibility_date = "2025-10-03"
-pages_build_output_dir = "./public"
+pages_build_output_dir = "./dist"
 
 # Deploy with `wrangler pages deploy ./public --project-name privatelivesmatter --branch main`.
