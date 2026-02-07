@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BookOpen, Clock, ArrowRight, Search, FileText } from 'lucide-react';
 import { articles, articleCategories } from '../data/articles';
 
@@ -6,6 +7,15 @@ export function KnowledgeBase() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedArticle, setExpandedArticle] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  const handleArticleClick = (id: string) => {
+    if (id === 'digital-sovereignty-guide') {
+      navigate('/digital-sovereignty');
+    } else {
+      setExpandedArticle(expandedArticle === id ? null : id);
+    }
+  };
 
   const filteredArticles = articles.filter(article => {
     const matchesCategory = activeCategory === 'All' || article.category === activeCategory;
@@ -73,7 +83,7 @@ export function KnowledgeBase() {
           <div className="mb-10">
             <div
               className="group bg-gradient-to-br from-dark-800/60 to-dark-800/30 border border-white/5 rounded-2xl p-8 sm:p-10 hover:border-brand-500/20 transition-all duration-300 cursor-pointer"
-              onClick={() => setExpandedArticle(expandedArticle === filteredArticles[0].id ? null : filteredArticles[0].id)}
+              onClick={() => handleArticleClick(filteredArticles[0].id)}
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="px-3 py-1 bg-brand-500/10 text-brand-400 text-xs font-semibold rounded-lg border border-brand-500/20">
@@ -101,7 +111,10 @@ export function KnowledgeBase() {
                 </span>
                 <span>{filteredArticles[0].date}</span>
                 <span className="flex items-center gap-1 text-brand-400 ml-auto group-hover:gap-2 transition-all">
-                  {expandedArticle === filteredArticles[0].id ? 'Collapse' : 'Read more'}
+                  {filteredArticles[0].id === 'digital-sovereignty-guide' 
+                    ? 'Launch Guide' 
+                    : (expandedArticle === filteredArticles[0].id ? 'Collapse' : 'Read more')
+                  }
                   <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </div>
@@ -116,7 +129,7 @@ export function KnowledgeBase() {
               key={article.id}
               className="group bg-dark-800/40 border border-white/5 rounded-2xl p-6 hover:border-brand-500/20 hover:bg-dark-800/60 transition-all duration-300 animate-fade-in cursor-pointer flex flex-col"
               style={{ animationDelay: `${index * 0.05}s` }}
-              onClick={() => setExpandedArticle(expandedArticle === article.id ? null : article.id)}
+              onClick={() => handleArticleClick(article.id)}
             >
               {/* Icon & Category */}
               <div className="flex items-center justify-between mb-4">
@@ -152,7 +165,10 @@ export function KnowledgeBase() {
                   <span>{article.date}</span>
                 </div>
                 <span className="flex items-center gap-1 text-brand-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                  {expandedArticle === article.id ? 'Less' : 'Read'}
+                  {article.id === 'digital-sovereignty-guide' 
+                    ? 'Launch' 
+                    : (expandedArticle === article.id ? 'Less' : 'Read')
+                  }
                   <ArrowRight className="w-3 h-3" />
                 </span>
               </div>

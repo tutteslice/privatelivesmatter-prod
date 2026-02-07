@@ -2,6 +2,15 @@ import type { InfoArticle } from '../types';
 
 export const articles: InfoArticle[] = [
   {
+    id: 'digital-sovereignty-guide',
+    title: 'Digital Sovereignty: Interactive Privacy Guide',
+    excerpt: 'A comprehensive, interactive simulation to assess your digital exposure and learn actionable defense protocols. (Interactive Tool)',
+    content: 'Click "Launch Guide" to access the full interactive experience.',
+    category: 'Guides',
+    date: '2026-02-07',
+    readTime: 'Interactive',
+  },
+  {
     id: 'why-privacy-matters',
     title: 'Why Privacy Matters',
     excerpt: 'Privacy isn\'t about having something to hide. It\'s about having the right to choose what to share. Understanding why digital privacy is a fundamental human right.',
