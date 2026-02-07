@@ -20,6 +20,7 @@ import { Contact } from './pages/Contact';
 import { Settings } from './pages/Settings';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
+import { DigitalSovereignty } from './pages/DigitalSovereignty';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -43,6 +44,7 @@ function AppContent() {
           <Route path="/tools" element={<ToolsRecommended />} />
           <Route path="/tool/:id" element={<ToolDetail />} />
           <Route path="/knowledge-base" element={<KnowledgeBase />} />
+          <Route path="/digital-sovereignty" element={<DigitalSovereignty />} />
           <Route path="/media" element={<Media />} />
           <Route path="/store" element={<Store />} />
           <Route path="/about" element={<About />} />
