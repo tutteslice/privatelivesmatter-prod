@@ -266,14 +266,14 @@ export const recommendedTools: RecommendedTool[] = [
   {
     id: 'glimmer',
     name: 'Glimmer',
-    description: 'Interactive visual design and effects tool.',
-    longDescription: 'Glimmer is a web-based creative application for generating and exploring visual effects. It offers an intuitive interface for experimenting with light, motion, and color to create stunning digital visuals directly in your browser.',
+    description: 'Identify thoughts that bring joy or sorrow and share them with those you care about.',
+    longDescription: 'Glimmer is a reflective space designed to help you navigate your emotional landscape. By identifying which thoughts make you feel good and which bring you down, you can gain clarity on your mental well-being. Share these reflections with the people who matter most, fostering deeper connections and understanding.',
     features: [
-      'Interactive visual effects',
-      'Real-time rendering',
-      'Browser-based',
-      'Intuitive controls',
-      'Creative experimentation'
+      'Thought-emotion identification',
+      'Personal reflection space',
+      'Share insights with loved ones',
+      'Mental well-being tracking',
+      'Simple, intuitive interface'
     ],
     pricing: 'Free',
     category: 'Recreational',
@@ -281,7 +281,7 @@ export const recommendedTools: RecommendedTool[] = [
     rating: 5,
     free: true,
     openSource: false,
-    tags: ['Visuals', 'Design', 'Creative', 'Art'],
+    tags: ['Wellness', 'Reflection', 'Sharing', 'Mental Health'],
   }
 ];
 
