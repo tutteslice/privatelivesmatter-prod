@@ -242,8 +242,28 @@ export const recommendedTools: RecommendedTool[] = [
     free: true,
     openSource: true,
     tags: ['Messaging', 'Encryption', 'Security'],
+  },
+  {
+    id: 'krita',
+    name: 'Krita',
+    description: 'Professional open source digital painting program.',
+    longDescription: "Krita is a professional free and open-source raster graphics editor designed primarily for digital painting and 2D animation. It is perfect for artists who want to create illustrations, concept art, storyboards, and more, without the burden of expensive subscription software.",
+    features: [
+      "Brush stabilizers for smooth lines",
+      "Built-in animation tools",
+      "Vector & Text support",
+      "Advanced layering and masking",
+      "Open source and community-driven"
+    ],
+    pricing: "Free",
+    category: 'Recreational',
+    url: 'https://krita.org/',
+    rating: 5,
+    free: true,
+    openSource: true,
+    tags: ['Creative', 'Art', 'Open Source', 'Design'],
   }
 ];
 
 export const toolCategories = ['All', 'AI Tools'];
-export const recommendedCategories = ['All', 'VPN', 'Email', 'Passwords', 'Privacy', 'Browsers', 'Blockers', 'Communication'];
+export const recommendedCategories = ['All', 'VPN', 'Email', 'Passwords', 'Privacy', 'Browsers', 'Blockers', 'Communication', 'Recreational'];
