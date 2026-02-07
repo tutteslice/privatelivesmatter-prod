@@ -262,6 +262,26 @@ export const recommendedTools: RecommendedTool[] = [
     free: true,
     openSource: false,
     tags: ['Music', 'Writing', 'Lyrics', 'Creativity'],
+  },
+  {
+    id: 'glimmer',
+    name: 'Glimmer',
+    description: 'Interactive visual design and effects tool.',
+    longDescription: 'Glimmer is a web-based creative application for generating and exploring visual effects. It offers an intuitive interface for experimenting with light, motion, and color to create stunning digital visuals directly in your browser.',
+    features: [
+      'Interactive visual effects',
+      'Real-time rendering',
+      'Browser-based',
+      'Intuitive controls',
+      'Creative experimentation'
+    ],
+    pricing: 'Free',
+    category: 'Recreational',
+    url: 'https://glimmer-5es.pages.dev/',
+    rating: 5,
+    free: true,
+    openSource: false,
+    tags: ['Visuals', 'Design', 'Creative', 'Art'],
   }
 ];
 
