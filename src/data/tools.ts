@@ -244,24 +244,24 @@ export const recommendedTools: RecommendedTool[] = [
     tags: ['Messaging', 'Encryption', 'Security'],
   },
   {
-    id: 'krita',
-    name: 'Krita',
-    description: 'Professional open source digital painting program.',
-    longDescription: "Krita is a professional free and open-source raster graphics editor designed primarily for digital painting and 2D animation. It is perfect for artists who want to create illustrations, concept art, storyboards, and more, without the burden of expensive subscription software.",
+    id: 'lyricflow-studio',
+    name: 'LyricFlow Studio',
+    description: 'A focused, distraction-free environment for songwriting and lyric composition.',
+    longDescription: "LyricFlow Studio is a specialized creative tool designed for songwriters and poets. It provides a clean, focused interface for crafting lyrics, organizing song structures, and keeping your creative flow uninterrupted. Perfect for artists who want to focus purely on their words.",
     features: [
-      "Brush stabilizers for smooth lines",
-      "Built-in animation tools",
-      "Vector & Text support",
-      "Advanced layering and masking",
-      "Open source and community-driven"
+      "Distraction-free writing interface",
+      "Song structure organization",
+      "Clean, modern UI",
+      "Browser-based (No installation)",
+      "Instant auto-save"
     ],
     pricing: "Free",
     category: 'Recreational',
-    url: 'https://krita.org/',
+    url: 'https://lyricflow-studio.pages.dev/',
     rating: 5,
     free: true,
-    openSource: true,
-    tags: ['Creative', 'Art', 'Open Source', 'Design'],
+    openSource: false,
+    tags: ['Music', 'Writing', 'Lyrics', 'Creativity'],
   }
 ];
 
