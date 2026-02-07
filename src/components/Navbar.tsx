@@ -17,6 +17,7 @@ const navLinks = [
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isThemeOpen, setIsThemeOpen] = useState(false);
   const { totalItems, setIsCartOpen } = useCart();
   const { theme, setTheme } = useTheme();
   const { storeEnabled } = useSettings();
@@ -59,34 +60,52 @@ export function Navbar() {
           {/* Right Side */}
           <div className="flex items-center gap-3">
             {/* Theme switcher */}
-            <div className="relative group">
+            <div className="relative">
               <button
-                className="p-2.5 rounded-lg text-dark-200 hover:text-white hover:bg-white/5 transition-all flex items-center gap-1 text-xs"
+                onClick={() => setIsThemeOpen(!isThemeOpen)}
+                className={`p-2.5 rounded-lg transition-all flex items-center gap-1 text-xs ${
+                  isThemeOpen ? 'bg-white/10 text-white' : 'text-dark-200 hover:text-white hover:bg-white/5'
+                }`}
                 aria-label="Switch color theme"
               >
                 <Palette className="w-4 h-4" />
                 <span className="hidden xl:inline capitalize">{theme}</span>
               </button>
-              <div className="absolute right-0 mt-2 w-40 bg-dark-900 border border-white/10 rounded-xl shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-50">
-                {[
-                  { id: 'default', label: 'PLM Default' },
-                  { id: 'emerald', label: 'Emerald Night' },
-                  { id: 'violet', label: 'Violet Grid' },
-                  { id: 'amber', label: 'Amber Glow' },
-                  { id: 'cyber', label: 'Cyber Neon' },
-                ].map((scheme) => (
-                  <button
-                    key={scheme.id}
-                    onClick={() => setTheme(scheme.id as any)}
-                    className={`w-full flex items-center justify-between px-3 py-2 text-xs hover:bg-white/5 first:rounded-t-xl last:rounded-b-xl ${
-                      theme === scheme.id ? 'text-brand-400' : 'text-dark-200'
-                    }`}
-                  >
-                    <span>{scheme.label}</span>
-                    {theme === scheme.id && <span className="w-1.5 h-1.5 rounded-full bg-brand-400" />}
-                  </button>
-                ))}
-              </div>
+              
+              {/* Backdrop for closing */}
+              {isThemeOpen && (
+                <div 
+                  className="fixed inset-0 z-40" 
+                  onClick={() => setIsThemeOpen(false)} 
+                />
+              )}
+
+              {/* Dropdown */}
+              {isThemeOpen && (
+                <div className="absolute right-0 mt-2 w-40 bg-dark-900 border border-white/10 rounded-xl shadow-lg animate-fade-in z-50">
+                  {[
+                    { id: 'default', label: 'PLM Default' },
+                    { id: 'emerald', label: 'Emerald Night' },
+                    { id: 'violet', label: 'Violet Grid' },
+                    { id: 'amber', label: 'Amber Glow' },
+                    { id: 'cyber', label: 'Cyber Neon' },
+                  ].map((scheme) => (
+                    <button
+                      key={scheme.id}
+                      onClick={() => {
+                        setTheme(scheme.id as any);
+                        setIsThemeOpen(false);
+                      }}
+                      className={`w-full flex items-center justify-between px-3 py-2 text-xs hover:bg-white/5 first:rounded-t-xl last:rounded-b-xl ${
+                        theme === scheme.id ? 'text-brand-400' : 'text-dark-200'
+                      }`}
+                    >
+                      <span>{scheme.label}</span>
+                      {theme === scheme.id && <span className="w-1.5 h-1.5 rounded-full bg-brand-400" />}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
             {storeEnabled && (
               <button
