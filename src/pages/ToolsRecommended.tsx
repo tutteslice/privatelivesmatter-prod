@@ -37,7 +37,7 @@ export function ToolsRecommended() {
             <div className="w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center">
               <Sparkles className="w-5 h-5 text-brand-400" />
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white">Privacy Tools</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold text-white">Tools</h1>
           </div>
           <p className="text-dark-300 text-lg leading-relaxed">
             A curated collection of privacy-focused tools and services that I personally use and trust. 
