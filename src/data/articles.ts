@@ -120,4 +120,4 @@ export const articles: InfoArticle[] = [
   },
 ];
 
-export const articleCategories = ['All', 'Real World Cases', 'Fundamentals', 'Education', 'Guides', 'Rights'];
+export const articleCategories = ['All', 'Real World Cases', 'Fundamentals', 'Education', 'Guides', 'Rights', 'Courses'];
