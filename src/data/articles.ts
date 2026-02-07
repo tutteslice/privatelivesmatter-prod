@@ -11,6 +11,15 @@ export const articles: InfoArticle[] = [
     readTime: 'Interactive',
   },
   {
+    id: 'digital-sovereignty-online-guide',
+    title: 'Digital Sovereignty: Online Privacy Guide',
+    excerpt: 'Learn the protocols to vanish from the radar and reclaim your digital presence with this comprehensive online privacy simulation.',
+    content: 'This guide covers the mechanics of surveillance capitalism, browser fingerprinting, and metadata aggregation, providing actionable counter-tactics for each.',
+    category: 'Guides',
+    date: '2026-02-07',
+    readTime: '15 min',
+  },
+  {
     id: 'why-privacy-matters',
     title: 'Why Privacy Matters',
     excerpt: 'Privacy isn\'t about having something to hide. It\'s about having the right to choose what to share. Understanding why digital privacy is a fundamental human right.',

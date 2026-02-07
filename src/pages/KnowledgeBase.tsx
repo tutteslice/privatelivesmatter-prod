@@ -10,7 +10,7 @@ export function KnowledgeBase() {
   const navigate = useNavigate();
 
   const handleArticleClick = (id: string) => {
-    if (id === 'digital-sovereignty-guide') {
+    if (id === 'digital-sovereignty-guide' || id === 'digital-sovereignty-online-guide') {
       navigate('/digital-sovereignty');
     } else {
       setExpandedArticle(expandedArticle === id ? null : id);
