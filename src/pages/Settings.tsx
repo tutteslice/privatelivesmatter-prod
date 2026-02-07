@@ -1,4 +1,5 @@
-import { Settings as SettingsIcon, ShoppingBag, ToggleLeft, ToggleRight, Link as LinkIcon, RotateCcw } from 'lucide-react';
+import { useState } from 'react';
+import { Settings as SettingsIcon, ShoppingBag, Link as LinkIcon, RotateCcw, Lock } from 'lucide-react';
 import { useSettings } from '../context/SettingsContext';
 import { useAffiliate } from '../context/AffiliateContext';
 import { recommendedTools } from '../data/tools';
@@ -6,6 +7,62 @@ import { recommendedTools } from '../data/tools';
 export function Settings() {
   const { storeEnabled, setStoreEnabled } = useSettings();
   const { getLink, updateLink, resetLink, affiliateLinks } = useAffiliate();
+  const [accessCode, setAccessCode] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (accessCode === 'plm-admin') {
+      setIsAuthenticated(true);
+      setError(false);
+    } else {
+      setError(true);
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen pt-24 pb-16 flex items-center justify-center">
+        <div className="max-w-md w-full px-4">
+          <div className="bg-dark-800/40 border border-white/5 rounded-2xl p-8 text-center">
+            <div className="w-12 h-12 rounded-xl bg-dark-700/50 flex items-center justify-center mx-auto mb-4">
+              <Lock className="w-6 h-6 text-dark-300" />
+            </div>
+            <h2 className="text-xl font-bold text-white mb-2">Restricted Access</h2>
+            <p className="text-dark-400 text-sm mb-6">
+              This area is for administrative purposes only.
+            </p>
+            <form onSubmit={handleLogin} className="space-y-4">
+              <input
+                type="password"
+                value={accessCode}
+                onChange={(e) => {
+                  setAccessCode(e.target.value);
+                  setError(false);
+                }}
+                placeholder="Enter access code"
+                className={`w-full px-4 py-3 bg-dark-900/50 border rounded-xl text-white placeholder:text-dark-500 focus:outline-none focus:ring-1 transition-all ${
+                  error 
+                    ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/20' 
+                    : 'border-white/10 focus:border-brand-500/50 focus:ring-brand-500/20'
+                }`}
+              />
+              {error && (
+                <p className="text-xs text-red-400">Incorrect access code</p>
+              )}
+              <button
+                type="submit"
+                className="w-full py-3 bg-brand-500 hover:bg-brand-600 text-white font-medium rounded-xl transition-all shadow-lg shadow-brand-500/20"
+              >
+                Unlock Settings
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen pt-24 pb-16">

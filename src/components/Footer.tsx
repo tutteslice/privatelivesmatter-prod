@@ -13,7 +13,6 @@ export function Footer() {
     ...(storeEnabled ? [{ to: '/store', label: 'Store' }] : []),
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
-    { to: '/settings', label: 'Settings' },
   ];
 
   return (
